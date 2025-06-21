@@ -1,0 +1,27 @@
+{
+  "name": "immatriculation-api",
+  "version": "1.0.0",
+  "description": "API Express pour gérer les immatriculations uniques avec MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "express",
+    "mongodb",
+    "mongoose",
+    "api",
+    "immatriculation"
+  ],
+  "author": "Isey",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
