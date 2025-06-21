@@ -61,6 +61,23 @@ app.post('/api/immatriculation', async (req, res) => {
   }
 });
 
+app.post('/api/connexion', async (req, res) => {
+  const { pseudo, immatriculation } = req.body;
+
+  if (!pseudo || !immatriculation) {
+    return res.status(400).json({ error: 'Champs manquants' });
+  }
+
+  const user = await User.findOne({ pseudo, immatriculation });
+
+  if (!user) {
+    return res.status(401).json({ error: 'Identifiants invalides' });
+  }
+
+  res.json({ message: 'Connexion réussie', pseudo });
+});
+
+
 app.listen(PORT, () => {
   console.log(`Serveur lancé sur http://localhost:${PORT}`);
 });
